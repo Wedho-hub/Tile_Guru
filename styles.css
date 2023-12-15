@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url('https://images.unsplash.com/photo-1580060839134-75a5edca2e99?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* navbar styling */
+nav {
+    width: 100%;
+    height: 4rem;
+    background-color: none;
+    color: black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+nav #logo {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 0.5rem;
+    color: black;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+nav ul li {
+   margin: 0 1.5rem;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-weight: 500;
+   font-size: 0.9rem;
+   position: relative;
+}
+
+nav ul li::before, nav ul li::after {
+    content: "";
+    position: absolute;
+    width: 0; /* set the initial width */
+    height: 2px; /* set the height of the line */
+    bottom: 0; /* position the line at the bottom of the li */
+    left: 0; /* set the left edge of the line */
+    background-color: rgb(24, 12, 81); /* set the color of the line */
+    visibility: hidden; /* hide the line by default */
+    transition: width 0.3s, visibility 0.3s; /* transition the width and visibility properties */
+}
+
+nav ul li:hover::before {
+    visibility: visible; /* show the line when hovering */
+    width: 100%; /* set the width of the line to 100% of the li width */
+}
+
+nav ul li:hover::after {
+    visibility: hidden; /* hide the line by default */
+}
+
+nav ul li a{
+    color: inherit;
+    transition: all 0.3 ease;
+    text-decoration: solid;
+}
+
+nav ul li a:hover {
+    color: rgb(222, 3, 3);
+}
+
+/* home section */
+#home .container {
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(222, 22, 22, 0.7);
+}
