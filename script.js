@@ -28,3 +28,48 @@ window.addEventListener('scroll', function() {
         }
     });
 });
+
+// opening the modals
+const toggleModal = (readMoreBtn, modal) => {
+    readMoreBtn.addEventListener('click', () => {
+        modal.classList.toggle('open');
+    });
+};
+
+const design_btn = document.getElementById("design_btn");
+const design_modal = document.getElementById("design_modal");
+
+toggleModal(design_btn, design_modal);
+
+const installations_btn = document.getElementById("installations_btn");
+const installations_modal = document.getElementById("installations_modal"); // Corrected spelling
+
+toggleModal(installations_btn, installations_modal);
+
+const estimates_btn = document.getElementById("estimates_btn");
+const estimates_modal = document.getElementById("estimates_modal");
+
+toggleModal(estimates_btn, estimates_modal);
+
+const maintenance_btn = document.getElementById("maintenance_btn");
+const maintenance_modal = document.getElementById("maintenance_modal");
+
+toggleModal(maintenance_btn, maintenance_modal);
+
+// closing the modal on inside click
+const closeModal = (modal) => {
+    modal.classList.remove('open');
+};
+
+const closeOnInsideClick = (modal) => {
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            closeModal(modal);
+        }
+    });
+};
+
+closeOnInsideClick(design_modal);
+closeOnInsideClick(estimates_modal);
+closeOnInsideClick(installations_modal);
+closeOnInsideClick(maintenance_modal);
