@@ -1,18 +1,95 @@
+/* Reset and common styles */
+/* Reset and common styles */
 * {
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background: url('https://images.unsplash.com/photo-1580060839134-75a5edca2e99?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background: url('https://plus.unsplash.com/premium_photo-1676320514021-7c68dda90026?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-/* navbar styling */
+/* Section styles */
+section {
+    position: relative; /* Ensure relative positioning for the overlays */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: calc(100vh - 64px);
+    color: whitesmoke;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    gap: 1rem;
+}
+
+.column {
+    flex: 40%;
+    margin: 2% 1%;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    padding: 10px;
+}
+
+.content {
+    z-index: 1; /* Content should be on top of the overlays */
+    text-align: center;
+    max-width: 80%;
+    margin: auto;
+}
+
+.overlay {
+    position: absolute; /* Overlays should cover the entire section */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.5;
+}
+
+.dark {
+    background-color: black;
+}
+
+.light {
+    background-color: rgba(185, 218, 241, 0.8);
+}
+
+.section_heading {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    letter-spacing: 0.2rem;
+    line-height: 1.2rem;
+    font-size: 2em;
+    padding: 10vh;
+}
+
+.btn {
+    border-radius: 15px;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.4s ease-out;
+    background-color: coral;
+}
+
+.btn:hover {
+    background-color: crimson;
+}
+
+/* Navbar specific styling */
 nav {
     width: 100%;
     height: 4rem;
@@ -23,6 +100,8 @@ nav {
     align-items: center;
     position: sticky;
     top: 0;
+    transition: all 0.6s ease-in-out;
+    z-index: 1000;
 }
 
 nav #logo {
@@ -44,49 +123,99 @@ nav ul {
 }
 
 nav ul li {
-   margin: 0 1.5rem;
-   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-   font-weight: 500;
-   font-size: 0.9rem;
-   position: relative;
+    margin: 0 1.5rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    position: relative;
 }
 
-nav ul li::before, nav ul li::after {
+nav ul li::before,
+nav ul li::after {
     content: "";
     position: absolute;
-    width: 0; /* set the initial width */
-    height: 2px; /* set the height of the line */
-    bottom: 0; /* position the line at the bottom of the li */
-    left: 0; /* set the left edge of the line */
-    background-color: rgb(24, 12, 81); /* set the color of the line */
-    visibility: hidden; /* hide the line by default */
-    transition: width 0.3s, visibility 0.3s; /* transition the width and visibility properties */
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: crimson;
+    visibility: hidden;
+    transition: width 0.3s, visibility 0.3s;
 }
 
 nav ul li:hover::before {
-    visibility: visible; /* show the line when hovering */
-    width: 100%; /* set the width of the line to 100% of the li width */
+    visibility: visible;
+    width: 100%;
+    background-color: crimson;
 }
 
 nav ul li:hover::after {
-    visibility: hidden; /* hide the line by default */
+    visibility: hidden;
 }
 
-nav ul li a{
+nav ul li a {
     color: inherit;
-    transition: all 0.3 ease;
-    text-decoration: solid;
+    transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 nav ul li a:hover {
-    color: rgb(222, 3, 3);
+    color: rgb(255, 255, 255);
 }
 
-/* home section */
-#home .container {
-    height: 95vh;
+/* Focused state styles */
+nav ul li:focus-within::before {
+    visibility: visible;
+    width: 100%;
+    background-color: white;
+}
+
+nav ul li:focus-within a {
+    color: white;
+}
+
+nav.black-background ul li:focus-within::before,
+nav.black-background ul li:focus-within a {
+    color: white;
+}
+
+/* Home section specific styles */
+#home h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: xx-large;
+    line-height: 1.2;
+    margin: auto;
+    padding: 7vh;
+}
+
+#home p {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    padding-top: 5px;
+}
+
+#home .content{
+    width: 80%;
+    height: 50vh;
+}
+
+#home .content img {
+    float: left;
+    margin-right: 1rem;
+    width: 250px;
+    height: 357px;
+}
+
+/* why us specific styles */
+#why_us {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(222, 22, 22, 0.7);
+    color: black;
+}
+
+#why_us .card {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.3;
 }
