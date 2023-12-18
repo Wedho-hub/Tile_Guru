@@ -42,6 +42,11 @@ section {
     padding: 10px;
 }
 
+.swing-top-fwd {
+	-webkit-animation: swing-top-fwd 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: swing-top-fwd 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
 .content {
     z-index: 1; /* Content should be on top of the overlays */
     text-align: center;
@@ -270,4 +275,77 @@ nav.black-background ul li:focus-within a {
 
 .read_more_btn:hover {
     background-color: rgb(227, 72, 4);
+}
+
+/* contact specific styles */
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+}
+
+.section_heading_container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Updated alignment */
+    width: 100%;
+    margin-top: 20px; /* Adjust the top margin as needed */
+}
+
+#contact .section_heading {
+    /* Adjusted styling */
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    line-height: 1.2rem;
+    font-size: 2em;
+}
+
+/* Form Styling */
+#contact .form {
+    width: 100%;
+    max-width: 400px; /* Adjust as needed */
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Add other desired form styles */
+}
+
+#contact .content .image{
+    width: 300px;
+    height: 400px;
+    float: left;
+}
+
+#contact .content .form {
+    width: 35vw; /* Adjusted width for responsiveness */
+    height: auto; /* Changed height to auto */
+    float: right;
+}
+
+@media screen and (min-width: 768px) {
+    /* Media query styles for larger screens */
+    #contact .content {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    #contact .content .image {
+        width: 50%;
+        order: 1;
+    }
+
+    #contact .content .form {
+        width: 50%;
+        order: 2;
+    }
+}
+
+#contact .content .image img {
+    width: 100%;
+    height: auto; /* Changed height to auto for responsiveness */
+    border-radius: 10px;
+    box-shadow: 0 0 6px 8px rgba(0, 0, 0, 0.5);
 }
