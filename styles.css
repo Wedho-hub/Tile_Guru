@@ -1,3 +1,4 @@
+
 /* Reset and common styles */
 /* Reset and common styles */
 * {
@@ -77,7 +78,7 @@ section {
     letter-spacing: 0.2rem;
     line-height: 1.2rem;
     font-size: 2em;
-    padding: 10vh;
+    padding: 7vh;
 }
 
 .btn {
@@ -281,6 +282,7 @@ nav.black-background ul li:focus-within a {
 #contact {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     color: black;
 }
@@ -288,45 +290,48 @@ nav.black-background ul li:focus-within a {
 .section_heading_container {
     display: flex;
     justify-content: center;
-    align-items: center; /* Updated alignment */
+    align-items: center;
     width: 100%;
-    margin-top: 20px; /* Adjust the top margin as needed */
+    margin-top: 1rem; 
 }
 
 #contact .section_heading {
-    /* Adjusted styling */
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     letter-spacing: 0.2rem;
     line-height: 1.2rem;
     font-size: 2em;
+    color: black;
+}
+
+#contact .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
 }
 
 /* Form Styling */
 #contact .form {
-    width: 100%;
-    max-width: 400px; /* Adjust as needed */
-    padding: 20px;
-    background-color: #f8f8f8;
+    width: 40%;
+    height: auto;
+    padding: 1rem;
+    margin: 1rem;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* Add other desired form styles */
+    box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #contact .content .image{
-    width: 300px;
-    height: 400px;
+    width: 30%;
+    height: auto;
     float: left;
 }
 
-#contact .content .form {
-    width: 35vw; /* Adjusted width for responsiveness */
-    height: auto; /* Changed height to auto */
-    float: right;
-}
 
-@media screen and (min-width: 768px) {
-    /* Media query styles for larger screens */
+@media screen and (max-width: 768px) {
+    /* Media query styles for smaller screens */
     #contact .content {
         flex-direction: row;
         align-items: center;
