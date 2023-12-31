@@ -2,8 +2,9 @@ window.addEventListener('scroll', function() {
     let nav = document.querySelector('nav');
     let sections = document.querySelectorAll('section');
     let ulElement = document.querySelector('ul');
-    let links = document.querySelectorAll('nav ul li a');
+    let links = document.querySelectorAll('.nav-links');
     let logo = document.querySelector('#logo');
+    let hamburger = document.querySelector('.hamburger');
 
     sections.forEach((section, index) => {
         let rect = section.getBoundingClientRect();
@@ -16,6 +17,7 @@ window.addEventListener('scroll', function() {
                     link.style.color = 'black';
                 });
                 nav.classList.remove('black-background');
+                hamburger.style.color = 'black';
             } else {
                 nav.style.backgroundColor = 'black';
                 logo.style.color = 'white';
@@ -24,6 +26,7 @@ window.addEventListener('scroll', function() {
                     link.style.color = 'white';
                 });
                 nav.classList.add('black-background');
+                hamburger.style.color = 'white';
             }
         }
     });
@@ -42,7 +45,7 @@ const design_modal = document.getElementById("design_modal");
 toggleModal(design_btn, design_modal);
 
 const installations_btn = document.getElementById("installations_btn");
-const installations_modal = document.getElementById("installations_modal"); // Corrected spelling
+const installations_modal = document.getElementById("installations_modal");
 
 toggleModal(installations_btn, installations_modal);
 
@@ -73,3 +76,18 @@ closeOnInsideClick(design_modal);
 closeOnInsideClick(estimates_modal);
 closeOnInsideClick(installations_modal);
 closeOnInsideClick(maintenance_modal);
+
+// for humburger menu
+function toggleMenu() {
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('show-menu');
+}
+
+const hamburgerLinks = document.querySelectorAll('.menu a');
+
+hamburgerLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        const menu = document.querySelector('.menu');
+        menu.classList.remove('show-menu');
+    });
+});

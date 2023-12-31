@@ -103,7 +103,17 @@ h3 {
     padding: 0.7rem;
 }
 
-/* Navbar specific styling */
+/* Header specific styling */
+header{
+    position: sticky;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: var(--max-width);
+}
+
 nav {
     width: 100%;
     height: 4rem;
@@ -175,6 +185,14 @@ nav ul li a {
 
 nav ul li a:hover {
     color: rgb(255, 255, 255);
+}
+
+.hamburger {
+    display: none;
+}
+
+.menu {
+    display: none;
 }
 
 /* Focused state styles */
@@ -253,7 +271,7 @@ nav.black-background ul li:focus-within a {
     height: 100%;
     justify-content: center;
     align-items: center;
-    background-color: bisque;
+    background-color: rgb(255, 228, 196);
 }
 
 .open {
@@ -320,13 +338,39 @@ nav.black-background ul li:focus-within a {
     border-radius: 8px;
     box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.4);
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
+}
+
+#name {
+    width: 58%;
+    margin: 0.5em;
+    box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.4);
+    background: none;
+    border: 1px solid black;
+}
+
+#user_email {
+    width: 60%;
+    margin: 0.5em;
+    box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.4);
+    background: none;
+    border: 1px solid black;
 }
 
 #contact .content .image{
     width: 30%;
     height: auto;
     float: left;
+}
+
+fieldset {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 72%;
+    margin: 0.5em;
 }
 
 
@@ -346,6 +390,70 @@ nav.black-background ul li:focus-within a {
         width: 50%;
         order: 2;
     }
+
+    .hamburger {
+        display: block;
+        order: 2;
+        font-size: 1.5rem;
+        width: 35px;
+        border-radius: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1100;
+        position: relative;
+        transition: all 0.3s ease-in-out; 
+    }
+    
+    .hamburger:hover {
+        transform: scale(1.1); /* Hover effect - scale the size */
+    }
+    
+
+    .logo {
+        position: absolute;
+        order: 1;
+        top: 0;
+        padding-left: 2rem;
+    }
+
+    .bg-menu {
+        display: none;
+    }
+
+    .menu {
+        display: none;
+        position: fixed;
+        top: 65px;
+        width: 95%;
+        height: 50%;
+        background: rgb(255, 228, 196);
+        color: black;
+        font-size: 1.5rem;
+        z-index: 1000;
+        justify-content: space-around;
+        align-items: center;
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .menu.show-menu {
+        display: flex;
+        flex-direction: column;
+        opacity: 1;
+        transform: translateY(0); 
+    }
+
+    .menu a {
+        color: black;
+        transition: color 0.3s ease;
+    }
+
+    .menu a:hover {
+        color: white;
+    }
 }
 
 #contact .content .image img {
@@ -354,3 +462,18 @@ nav.black-background ul li:focus-within a {
     border-radius: 10px;
     box-shadow: 0 0 6px 8px rgba(0, 0, 0, 0.5);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
