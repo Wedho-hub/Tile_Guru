@@ -39,7 +39,7 @@
                     <p>Welcome to a world of exquisite tile artistry! At Tile Guru, we're
                       passionate about transforming spaces into stunning reflections of your personality.
                     </p>
-                    <button class="btn">See Our Work</button>
+                    <button class="btn" id="our-work">See Our Work</button>
             </div>
         </section>
 
@@ -158,26 +158,30 @@
         <!-- Section: Contact Us -->
         <section class="container" id="contact">
             <div class="section_heading_container">
-                <h1 class="section_heading">CONTACT US</h1>
+                <h1 class="section_heading" id="contact-heading">CONTACT US</h1>
             </div>
             <div class="overlay light"></div>
             <div class="content">
                 <div class="image">
                     <img src="https://images.unsplash.com/photo-1521572089244-e5aaacacca6b?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                     alt="contact picture">
+                    <button class="btn" id="submit">Submit</button>
                 </div>
                 <div class="form">
                     <form action="" method="post">
                         <fieldset>
                             <legend>Get In Touch With Us</legend>
-                            <label for="name">Name: </label>
+                            <label for="name">Name:</label>
                             <input type="text" name="name" id="name" placeholder="Please enter your full name">
+                            
+                            <label for="phone-number">Phone:</label>
+                            <input type="text" name="phone-number" id="phone-number" placeholder="+1234567890">
 
-                            <label for="user_email">Email: </label>
+                            <label for="user_email">Email:</label>
                             <input type="email" name="user_email" id="user_email" placeholder="e.g example@something.com">
 
                             <label for="message">Leave A message:</label>
-                            <textarea name="message" id="message" cols="37" rows="8"></textarea>
+                            <textarea name="message" id="message" cols="37" rows="4"></textarea>
                         </fieldset>
                         <fieldset>
                             <legend>What do you prefer?</legend>

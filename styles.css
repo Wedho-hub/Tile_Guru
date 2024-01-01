@@ -56,7 +56,7 @@ section {
 }
 
 .overlay {
-    position: absolute; /* Overlays should cover the entire section */
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -83,7 +83,7 @@ section {
 
 .btn {
     border-radius: 15px;
-    width: 150px;
+    width: 20vw;
     height: 30px;
     text-align: center;
     display: inline-block;
@@ -241,6 +241,12 @@ nav.black-background ul li:focus-within a {
     box-shadow: 0 0 10px 7px rgba(0, 0, 0, 0.6);
 }
 
+#our-work {
+    position: relative;
+    top: 45%;
+    right: 15%;
+}
+
 /* why us specific styles */
 #why_us {
     display: flex;
@@ -310,20 +316,22 @@ nav.black-background ul li:focus-within a {
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 1rem; 
+    margin-top: 1rem;
 }
 
-#contact .section_heading {
+#contact-heading {
     font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
+    font-weight: 900;
     letter-spacing: 0.2rem;
     line-height: 1.2rem;
     font-size: 2em;
-    color: black;
+    color: rgb(0, 0, 0);
+    z-index: 2;
 }
 
 #contact .content {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 3rem;
@@ -331,51 +339,76 @@ nav.black-background ul li:focus-within a {
 
 /* Form Styling */
 #contact .form {
-    width: 40%;
-    height: auto;
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.4);
+    max-width: 600px;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 8px;
+    position: relative;
+    bottom: 8%;
 }
 
-#name {
-    width: 58%;
-    margin: 0.5em;
-    box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.4);
-    background: none;
-    border: 1px solid black;
-}
-
-#user_email {
-    width: 60%;
-    margin: 0.5em;
-    box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.4);
-    background: none;
-    border: 1px solid black;
+#name,
+#user_email,
+#message,
+#phone-number {
+    width: 80%;
+    margin: 0.5em 0;
+    padding: 0.5em;
+    border-radius: 4px;
+    border: 1px solid #ccc;
 }
 
 #contact .content .image{
-    width: 30%;
     height: auto;
-    float: left;
+    width: 30vw;
 }
 
 fieldset {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-between;
-    width: 72%;
-    margin: 0.5em;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.4);
+    border: outset;
+    border-radius: 5px;
 }
 
+#contact .content .image img {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 6px 8px rgba(0, 0, 0, 0.5);
+}
+
+legend {
+    padding: 10px;
+    z-index: 2;
+    font-size: 1.2rem;
+    font-family: cursive;
+    font-weight: 900;
+    font-style: italic;
+}
+
+#submit {
+    position: relative;
+    top: 7%;
+}
+
+/* footer specific styles */
+footer {
+    text-align: center;
+    font-size: 1.2rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 @media screen and (max-width: 768px) {
     /* Media query styles for smaller screens */
+
+    .section {
+        height: 100%;
+    }
+
     #contact .content {
         flex-direction: row;
         align-items: center;
@@ -387,8 +420,14 @@ fieldset {
     }
 
     #contact .content .form {
-        width: 50%;
+        width: 90%;
         order: 2;
+    }
+
+    #name,
+    #user_email,
+    #message {
+        width: calc(100% - 1em);
     }
 
     .hamburger {
@@ -426,17 +465,20 @@ fieldset {
         display: none;
         position: fixed;
         top: 65px;
-        width: 95%;
-        height: 50%;
+        width: 50%;
+        height: 40%;
+        right: 2%;
         background: rgb(255, 228, 196);
         color: black;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 0 6px 8px rgba(0, 0, 0, 0.5);
         font-size: 1.5rem;
         z-index: 1000;
-        justify-content: space-around;
+        justify-content: space-evenly;
         align-items: center;
-        opacity: 0;
-        transform: translateY(-100%);
-        transition: opacity 0.3s ease, transform 0.3s ease;
+        transform: translateY(100%);
+        transition: opacity 0.3s ease, transform 0.6s ease;
     }
 
     .menu.show-menu {
@@ -452,28 +494,6 @@ fieldset {
     }
 
     .menu a:hover {
-        color: white;
+        color: darkslategray;
     }
 }
-
-#contact .content .image img {
-    width: 100%;
-    height: auto; /* Changed height to auto for responsiveness */
-    border-radius: 10px;
-    box-shadow: 0 0 6px 8px rgba(0, 0, 0, 0.5);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
