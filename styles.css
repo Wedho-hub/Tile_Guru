@@ -184,7 +184,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: rgb(255, 255, 255);
+    color: coral;
 }
 
 .hamburger {
@@ -405,8 +405,65 @@ footer {
 @media screen and (max-width: 768px) {
     /* Media query styles for smaller screens */
 
-    .section {
-        height: 100%;
+    .section_heading {
+        font-size: 1.6rem;
+    }
+
+    #home .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        padding-bottom: 5%;
+    }
+
+    #home .content h1 {
+        position: relative;
+        right: 2%;
+        text-align: center;
+        font-size: 1.7rem;
+    }
+
+    #home .content img {
+        position: relative;
+        left: 2%;
+        width: 70%;
+    }
+
+    #why_us {
+        padding: 5% 0;
+        height: auto;
+    }
+
+    #why_us #whatsapp {
+        width: 200px;
+    }
+
+    .column {
+        flex: 100%;
+        margin: 2% 0;
+    }
+
+    #our-work {
+        position: relative;
+        top: 5%;
+        left: 2%;
+        width: 150px;
+        font-weight: 550;
+    }
+
+    #services {
+        padding: 5% 0;
+        height: auto;
+    }
+
+    #services .content {
+        margin-bottom: 3%;
+    }
+
+    #contact {
+        height: auto;
     }
 
     #contact .content {

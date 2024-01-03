@@ -16,21 +16,26 @@ window.addEventListener('scroll', function() {
                 links.forEach(link => {
                     link.style.color = 'black';
                 });
-                nav.classList.remove('black-background');
                 hamburger.style.color = 'black';
             } else {
                 nav.style.backgroundColor = 'black';
                 logo.style.color = 'white';
-                ulElement.style.color = 'white';
                 links.forEach(link => {
                     link.style.color = 'white';
                 });
-                nav.classList.add('black-background');
                 hamburger.style.color = 'white';
             }
         }
     });
+
+    // Ensure visibility of menu items on light backgrounds
+    if (nav.style.backgroundColor === 'white') {
+        ulElement.style.color = 'black';
+    } else {
+        ulElement.style.color = 'white';
+    }
 });
+
 
 // opening the modals
 const toggleModal = (readMoreBtn, modal) => {
