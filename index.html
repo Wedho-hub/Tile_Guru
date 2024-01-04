@@ -78,7 +78,7 @@
                 <br>
 
 
-                <button class="btn" id="whatsapp">Whatsapp us now</button>
+                <button class="btn" id="whatsapp" onclick="window.location.href='https://wa.me/27813872713'" type="button">Whatsapp us now</button>
             </div>
         </section>
 
@@ -89,7 +89,7 @@
                 <h1 class="section_heading">SERVICES</h1>
                 <div class="row">
                     <div class="column">
-                        <img src="" alt="Commercial tiling picture">
+                        <img src="https://plus.unsplash.com/premium_photo-1661290340876-891785b5d903?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="design image">
                         <h3 class="service_heading">Tile Selection And Design</h3>
                         <button class="read_more_btn" id="design_btn">Read More</button>
                         <div class="modal" id="design_modal">
@@ -105,7 +105,7 @@
                     </div>
                     
                     <div class="column">
-                        <img src="" alt="Commercial tiling picture">
+                        <img src="https://plus.unsplash.com/premium_photo-1661476072212-9f3ba81f0411?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="estimate image">
                         <h3 class="service_heading">Project Estimates And Timelines</h3>
                         <button class="read_more_btn" id="estimates_btn">Read More</button>
                         <div class="modal" id="estimates_modal">
@@ -121,7 +121,7 @@
                     </div>
                     
                     <div class="column">
-                        <img src="" alt="Commercial tiling picture">
+                        <img src="https://plus.unsplash.com/premium_photo-1683121248255-9816c1cef6b2?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="installation image">
                         <h3 class="service_heading">Installations</h3>
                         <button class="read_more_btn" id="installations_btn">Read More</button>
                         <div class="modal" id="installations_modal">
@@ -137,7 +137,7 @@
                     </div>
                     
                     <div class="column">
-                        <img src="" alt="Commercial tiling picture">
+                        <img src="https://plus.unsplash.com/premium_photo-1663011122741-f56a8e35a163?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="maintenance image">
                         <h3 class="service_heading">Maintenance And Repairs</h3>
                         <button class="read_more_btn" id="maintenance_btn">Read More</button>
                         <div class="modal" id="maintenance_modal">
@@ -165,32 +165,35 @@
                 <div class="image">
                     <img src="https://images.unsplash.com/photo-1521572089244-e5aaacacca6b?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                     alt="contact picture">
-                    <button class="btn" id="submit">Submit</button>
                 </div>
                 <div class="form">
                     <form action="" method="post">
                         <fieldset>
                             <legend>Get In Touch With Us</legend>
                             <label for="name">Name:</label>
-                            <input type="text" name="name" id="name" placeholder="Please enter your full name">
+                            <input type="text" name="name" id="name" placeholder="Please enter your full name" required>
                             
                             <label for="phone-number">Phone:</label>
-                            <input type="text" name="phone-number" id="phone-number" placeholder="+1234567890">
+                            <input type="text" name="phone-number" id="phone-number" placeholder="+1234567890" required>
 
                             <label for="user_email">Email:</label>
-                            <input type="email" name="user_email" id="user_email" placeholder="e.g example@something.com">
+                            <input type="email" name="user_email" id="user_email" placeholder="e.g example@something.com" required>
 
                             <label for="message">Leave A message:</label>
-                            <textarea name="message" id="message" cols="37" rows="4"></textarea>
+                            <textarea name="message" id="message" cols="37" rows="4" required></textarea>
                         </fieldset>
                         <fieldset>
                             <legend>What do you prefer?</legend>
-                            <input type="radio" name="call_me" id="call_me">
+                            <input type="radio" name="call_me" id="call_me" required>
                             <label for="call">Call Me</label>
 
-                            <input type="radio" name="email" id="email_me">
-                            <label for="email_me">Email Me</label>
+                            <input type="radio" name="email" id="email" required>
+                            <label for="email">Email Me</label>
+                            
+                            <input type="radio" name="sms" id="sms" required>
+                            <label for="sms">SMS me</label>
                         </fieldset>
+                        <button class="btn" id="submit">Submit</button>
                     </form>
                 </div>
             </div>

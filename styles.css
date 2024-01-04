@@ -43,6 +43,10 @@ section {
     padding: 10px;
 }
 
+.column img {
+    width: 75%;
+}
+
 .swing-top-fwd {
 	-webkit-animation: swing-top-fwd 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: swing-top-fwd 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -270,14 +274,21 @@ nav.black-background ul li:focus-within a {
 }
 
 /* services specific styles */
+
+#services {
+    height: auto;
+}
+
 .modal {
     display: none;
     position: absolute;
-    left: 0; right: 0; top: 0; bottom: 0;
-    height: 100%;
+    top: 10%; bottom: 10%; left: 3%; right: 3%;
+    height: 90vh;
+    width: 80vw;
     justify-content: center;
     align-items: center;
-    background-color: rgb(255, 228, 196);
+    background-color: rgba(255, 228, 196, .8);
+    border-radius: 8px;
 }
 
 .open {
@@ -359,9 +370,18 @@ nav.black-background ul li:focus-within a {
     border: 1px solid #ccc;
 }
 
+#name:active,
+#user_email:active,
+#message:active,
+#phone-number:active {
+    border: 1px solid coral;
+}
+
+
 #contact .content .image{
     height: auto;
     width: 30vw;
+    padding: 5% 0;
 }
 
 fieldset {
@@ -483,8 +503,10 @@ footer {
 
     #name,
     #user_email,
-    #message {
-        width: calc(100% - 1em);
+    #message,
+    #phone-number {
+        border: none;
+        background: rgba(223, 229, 233, 0.8);
     }
 
     .hamburger {
